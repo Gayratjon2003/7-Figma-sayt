@@ -1,0 +1,12 @@
+@mixin  btn-1{
+    color: #fff;
+    padding: 15px 50px;
+    background-color: #D23166;
+    border-radius: 5px;
+    border: none;
+    font-family: 'Hind Madurai';
+    &:hover {
+        cursor: pointer;
+        background-color: yellow;
+    }
+}
