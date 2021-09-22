@@ -211,6 +211,9 @@ body{
             img {
                 width: 140%;
             }
+            @media (max-width: 400px) {
+                bottom: -12%;
+            }
         }
         @media (max-width: 992px) {
             width: 60% !important;
@@ -220,6 +223,9 @@ body{
             width: 60% !important;
             margin: 0 auto;
             height: 320px;
+        }
+        @media (max-width: 400px) {
+            margin-left: 11%;
         }
     }
     @media (max-width: 992px) {
@@ -369,6 +375,11 @@ body{
                 }
                 .tbody-2-position-2 {
                     top: 40% !important;
+                }
+            }
+            @media (max-width: 400px) {
+                .tbody-2-position-2 {
+                    top: 10% !important;
                 }
             }
             @media (max-width: 1250px){
