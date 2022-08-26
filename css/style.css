@@ -5,8 +5,39 @@
           box-sizing: border-box;
 }
 
+html {
+  font-size: 62.5%;
+}
+
+@media (max-width: 700px) {
+  html {
+    font-size: 43.75%;
+  }
+}
+
+@media (max-width: 480px) {
+  html {
+    font-size: 28%;
+  }
+}
+
+@font-face {
+  font-family: "Roboto";
+  src: url(../font/Roboto/Roboto-Regular.ttf);
+}
+
+@font-face {
+  font-family: "Hind Madurai";
+  src: url(../font/Hind_Madurai/HindMadurai-Regular.ttf);
+}
+
+@font-face {
+  font-family: "Fredoka One";
+  src: url(../font/Fredoka_One/FredokaOne-Regular.ttf);
+}
+
 body {
-  overflow-x: hidden;
+  background-color: #f2ceda;
 }
 
 ::-webkit-scrollbar {
@@ -15,7 +46,7 @@ body {
 }
 
 ::-webkit-scrollbar-thumb {
-  background-color: #D23166;
+  background-color: #d23166;
   border-radius: 5px;
 }
 
@@ -24,14 +55,8 @@ body {
   margin: 0 auto;
 }
 
-.navbar {
-  background-color: #FBF0F4;
-}
-
-@media (max-width: 992px) {
-  .navbar .container {
-    width: 90%;
-  }
+.color-pink {
+  color: #d23166;
 }
 
 .navbar-box {
@@ -46,53 +71,110 @@ body {
           align-items: center;
 }
 
-.navbar-box .navbar-blok-1 ul li {
-  list-style-type: none;
+.navbar-box .navbar-box-center .fixed-navbar .navbar-cancel {
+  font-size: 5.5rem;
+  cursor: pointer;
+  margin-left: 77%;
+  opacity: 0.7;
+  display: none;
+}
+
+.navbar-box .navbar-box-center .fixed-navbar .navbar-cancel:hover {
+  opacity: 1;
+}
+
+@media (max-width: 992px) {
+  .navbar-box .navbar-box-center .fixed-navbar {
+    position: fixed;
+    top: 0rem;
+    left: -100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+    width: 100%;
+    height: 100vh;
+    z-index: 10;
+    background-color: #8591a6;
+    -webkit-transition: 0.3s all linear;
+    transition: 0.3s all linear;
+  }
+  .navbar-box .navbar-box-center .fixed-navbar .for-media-li-top {
+    margin-top: 8rem;
+  }
+  .navbar-box .navbar-box-center .fixed-navbar li {
+    display: block;
+    margin-bottom: 3rem;
+  }
+  .navbar-box .navbar-box-center .fixed-navbar li a {
+    font-size: 4rem !important;
+  }
+  .navbar-box .navbar-box-center .fixed-navbar .navbar-cancel {
+    display: block;
+  }
+}
+
+.navbar-box .navbar-box-center .navbar-fixed-show {
+  position: fixed;
+  top: 0rem;
+  left: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  height: 100vh;
+  z-index: 10;
+  background-color: #8591a6;
+}
+
+.navbar-box .navbar-box-center ul li {
+  list-style: none;
   display: inline-block;
-  font-family: 'Roboto', sans-serif;
+  margin-right: 4rem;
 }
 
-.navbar-box .navbar-blok-1 ul li a {
+.navbar-box .navbar-box-center ul li a {
+  font-family: "Roboto";
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 16px;
+  letter-spacing: 0em;
   text-decoration: none;
   color: #150101;
-  margin-left: 40px;
+  opacity: 0.6;
 }
 
-.navbar-box .navbar-blok-1 ul li a:hover {
-  cursor: pointer;
-  color: #D23166;
+.navbar-box .navbar-box-center ul li a:hover {
+  color: #d23166;
+  opacity: 1;
+  font-weight: bold;
 }
 
-.navbar-box .navbar-blok-1 ul li .logo-img {
-  text-decoration: none;
-  color: #150101;
-  margin-left: 0px;
-}
-
-.navbar-box .navbar-blok-1 ul li .logo-img:hover {
-  cursor: pointer;
-  color: #D23166;
-}
-
-.navbar-box .navbar-blok-1 .btn-1 {
-  color: #fff;
-  padding: 15px 50px;
-  background-color: #D23166;
-  border-radius: 5px;
-  border: none;
+.navbar-box .navbar-box-bottom .btn-my {
+  padding: 1.4rem 5rem;
   font-family: 'Hind Madurai';
-  padding: 15px 30px;
-}
-
-.navbar-box .navbar-blok-1 .btn-1:hover {
+  font-size: 1.6rem;
+  font-weight: 700;
+  line-height: 2.2rem;
+  letter-spacing: 0em;
+  background-color: #D23166;
+  color: #fff;
+  border-radius: 0.5rem;
+  border: none;
   cursor: pointer;
-  background-color: yellow;
 }
 
-.navbar-box .checkbtn {
-  display: block;
-  float: right;
-  font-size: 30px;
+.navbar-box .navbar-box-bottom .btn-my:hover {
+  background-color: yellow;
 }
 
 .navbar-box #check {
@@ -103,239 +185,23 @@ body {
   display: none;
 }
 
+.navbar-box .checkbtn i {
+  font-size: 3rem;
+  opacity: 0.7;
+}
+
+.navbar-box .checkbtn i:hover {
+  opacity: 1;
+}
+
 @media (max-width: 992px) {
   .navbar-box .checkbtn {
     display: block;
-    float: right !important;
-    cursor: pointer;
-  }
-  .navbar-box .nav-menu {
-    position: fixed;
-    top: 75px;
-    left: -100%;
-    width: 100%;
-    height: 100vh;
-    background-color: #8591a6;
-    text-align: center;
-    color: white;
-    z-index: 10;
-    -webkit-transition: all 0.5s;
-    transition: all 0.5s;
-  }
-  .navbar-box .nav-menu li {
-    display: block !important;
-    margin: 50px 0;
-  }
-  .navbar-box .nav-menu li a {
-    color: white;
-  }
-  .navbar-box .nav-menu-act {
-    left: 0% !important;
-    position: fixed;
-    top: 75px;
-    width: 100%;
-    height: 100vh;
-    background-color: #8591a6;
-    text-align: center;
-    z-index: 10;
-    -webkit-transition: all 0.5s;
-    transition: all 0.5s;
-  }
-  .navbar-box .nav-menu-act li {
-    display: block !important;
-    margin: 50px auto !important;
-  }
-  .navbar-box .nav-menu-act li a {
-    display: block;
-    color: white !important;
   }
 }
 
-.color-now {
-  color: #D23166;
-}
-
-.tbody {
-  padding-top: 150px;
-  background-color: #FBF0F4;
-  padding-bottom: 100px;
-}
-
-@media (max-width: 992px) {
-  .tbody {
-    padding-top: 70px;
-  }
-}
-
-.tbody-box {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-}
-
-.tbody-box .tbody-box-blok-1 {
-  width: 60%;
-}
-
-.tbody-box .tbody-box-blok-1 .tbody-container-p {
-  width: 75%;
-  line-height: 27px;
-  color: #0F0101;
-  opacity: 0.6;
-  font-family: 'Hind Madurai',sans-serif;
-  margin-bottom: 50px;
-}
-
-.tbody-box .tbody-box-blok-1 h5 {
-  font-family: 'Roboto', sans-serif;
-}
-
-.tbody-box .tbody-box-blok-1 h1 {
-  font-family: 'Fredoka One', sans-serif;
-  font-size: 50px;
-  font-weight: 700;
-  line-height: 70px;
-  margin-bottom: 30px;
-}
-
-@media (max-width: 576px) {
-  .tbody-box .tbody-box-blok-1 h1 {
-    font-size: 40px;
-  }
-}
-
-.tbody-box .tbody-box-blok-1 .btn-1 {
-  color: #fff;
-  padding: 15px 50px;
-  background-color: #D23166;
-  border-radius: 5px;
-  border: none;
-  font-family: 'Hind Madurai';
-}
-
-.tbody-box .tbody-box-blok-1 .btn-1:hover {
-  cursor: pointer;
-  background-color: yellow;
-}
-
-@media (max-width: 992px) {
-  .tbody-box .tbody-box-blok-1 .btn-1 {
-    margin-bottom: 100px !important;
-  }
-}
-
-@media (max-width: 576px) {
-  .tbody-box .tbody-box-blok-1 .btn-1 {
-    margin-bottom: 0px !important;
-  }
-}
-
-.tbody-box .tbody-box-blok-2 {
-  position: relative;
-  width: 45%;
-  height: 450px;
-}
-
-.tbody-box .tbody-box-blok-2 .tbody-img-1 {
-  position: absolute;
-  bottom: -15%;
-  right: 0;
-  width: 70%;
-}
-
-.tbody-box .tbody-box-blok-2 .tbody-img-1 img {
+.main .section-1 .section-1-box {
   width: 100%;
-}
-
-.tbody-box .tbody-box-blok-2 .tbody-img-2 {
-  position: absolute;
-  bottom: 0%;
-  left: 10%;
-  width: 100%;
-}
-
-.tbody-box .tbody-box-blok-2 .tbody-img-2 img {
-  width: 110%;
-}
-
-.tbody-box .tbody-box-blok-2 .tbody-img-3 {
-  position: absolute;
-  bottom: -22%;
-  left: -10%;
-  width: 100%;
-}
-
-.tbody-box .tbody-box-blok-2 .tbody-img-3 img {
-  width: 140%;
-}
-
-@media (max-width: 400px) {
-  .tbody-box .tbody-box-blok-2 .tbody-img-3 {
-    bottom: -12%;
-  }
-}
-
-@media (max-width: 992px) {
-  .tbody-box .tbody-box-blok-2 {
-    width: 60% !important;
-    margin: 0 auto;
-  }
-}
-
-@media (max-width: 768px) {
-  .tbody-box .tbody-box-blok-2 {
-    width: 60% !important;
-    margin: 0 auto;
-    height: 320px;
-  }
-}
-
-@media (max-width: 400px) {
-  .tbody-box .tbody-box-blok-2 {
-    margin-left: 11%;
-  }
-}
-
-@media (max-width: 992px) {
-  .tbody-box {
-    -ms-flex-wrap: wrap;
-        flex-wrap: wrap;
-  }
-  .tbody-box .tbody-box-blok-1 {
-    text-align: center;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
-    width: 100%;
-  }
-  .tbody-box .tbody-box-blok-1 img {
-    width: 100%;
-  }
-  .tbody-box .tbody-box-blok-2 {
-    width: 100%;
-  }
-  .tbody-box .tbody-box-blok-2 img {
-    width: 100%;
-  }
-}
-
-.tbody-1 .tbody-1-box {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -344,984 +210,398 @@ body {
           justify-content: space-between;
 }
 
-.tbody-1 .tbody-1-box .tbody-blok-1 {
-  width: 18%;
-  text-align: center;
-  color: black;
-  font-family: 'Hind Madurai', sans-serif;
-  -webkit-box-shadow: 20px 20px 50px rgba(0, 0, 0, 0.03);
-          box-shadow: 20px 20px 50px rgba(0, 0, 0, 0.03);
-  border-radius: 7px;
-  padding: 30px 25px;
-  margin: 100px 0;
+.main .section-1 .section-1-box .section-1-box-top {
+  width: 50%;
+  margin-bottom: 12rem;
 }
 
-.tbody-1 .tbody-1-box .tbody-blok-1 h3 {
-  padding-bottom: 10px;
-  padding-top: 25px;
+.main .section-1 .section-1-box .section-1-box-top h5 {
+  margin-top: 15rem;
+  font-family: "Roboto";
+  font-size: 1.4rem;
+  font-weight: 500;
+  line-height: 1.6rem;
+  letter-spacing: 0.1em;
+  color: #0f0101;
 }
 
-.tbody-1 .tbody-1-box .tbody-blok-1 p {
-  opacity: 0.6;
-}
-
-@media (max-width: 992px) {
-  .tbody-1 .tbody-1-box .tbody-blok-1 {
-    width: 45% !important;
-    margin: 20px 0;
-  }
-}
-
-@media (max-width: 576px) {
-  .tbody-1 .tbody-1-box .tbody-blok-1 {
-    width: 100% !important;
-    margin: 20px 0;
-  }
-}
-
-@media (max-width: 992px) {
-  .tbody-1 .tbody-1-box {
-    -ms-flex-wrap: wrap !important;
-        flex-wrap: wrap !important;
-    -webkit-box-pack: justify;
-        -ms-flex-pack: justify;
-            justify-content: space-between;
-  }
-}
-
-@media (max-width: 576px) {
-  .tbody-1 .tbody-1-box {
-    -ms-flex-wrap: wrap !important;
-        flex-wrap: wrap !important;
-    -webkit-box-pack: justify;
-        -ms-flex-pack: justify;
-            justify-content: space-between;
-  }
-}
-
-.tbody-2 {
-  background-color: #FBF0F4;
-  padding-top: 140px;
-}
-
-@media (max-width: 992px) {
-  .tbody-2 {
-    padding-top: 40px;
-  }
-}
-
-.tbody-2 .tbody-2-box {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-}
-
-.tbody-2 .tbody-2-box .tbody-2-blok-1 {
-  width: 30%;
-}
-
-.tbody-2 .tbody-2-box .tbody-2-blok-1 h1 {
-  font-size: 44px;
-  font-family: 'Hind Madurai', sans-serif;
-  line-height: 48px;
-  font-weight: 600;
-  padding-bottom: 15px;
-}
-
-.tbody-2 .tbody-2-box .tbody-2-blok-1 p {
-  font-family: 'Roboto';
+.main .section-1 .section-1-box .section-1-box-top h1 {
+  font-family: "Fredoka One";
+  font-style: normal;
   font-weight: 400;
-  color: #150101;
+  font-size: 5.7rem;
+  color: #0f0101;
+  opacity: 0.9;
+}
+
+.main .section-1 .section-1-box .section-1-box-top h1 span {
+  font-size: 5.7rem;
+}
+
+.main .section-1 .section-1-box .section-1-box-top p {
+  font-family: "Hind Madurai";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 1.8rem;
+  line-height: 2.7rem;
+  color: #0f0101;
+  margin: 3.5rem 0;
   opacity: 0.6;
 }
 
-.tbody-2 .tbody-2-box .tbody-2-blok-1 .btn-1 {
-  color: #fff;
-  padding: 15px 50px;
-  background-color: #D23166;
-  border-radius: 5px;
-  border: none;
+.main .section-1 .section-1-box .section-1-box-top .btn-my {
+  padding: 1.4rem 5rem;
   font-family: 'Hind Madurai';
-  font-family: 'Roboto',sans-serif;
-  margin-top: 35px;
-  margin-bottom: 140px;
+  font-size: 1.6rem;
+  font-weight: 700;
+  line-height: 2.2rem;
+  letter-spacing: 0em;
+  background-color: #D23166;
+  color: #fff;
+  border-radius: 0.5rem;
+  border: none;
+  cursor: pointer;
+  font-family: Hind Madurai;
+  font-size: 1.6rem;
+  font-weight: 700;
+  line-height: 2.2rem;
+  letter-spacing: 0em;
+  text-align: left;
 }
 
-.tbody-2 .tbody-2-box .tbody-2-blok-1 .btn-1:hover {
-  cursor: pointer;
+.main .section-1 .section-1-box .section-1-box-top .btn-my:hover {
   background-color: yellow;
 }
 
-@media (max-width: 992px) {
-  .tbody-2 .tbody-2-box .tbody-2-blok-1 .btn-1 {
-    margin-bottom: 20px;
+@media (max-width: 700px) {
+  .main .section-1 .section-1-box .section-1-box-top {
+    min-width: 30rem;
+    width: 100%;
   }
 }
 
-@media (max-width: 992px) {
-  .tbody-2 .tbody-2-box .tbody-2-blok-1 {
-    width: 80%;
-    margin: 0 auto;
-    text-align: center;
-    margin-bottom: 110px;
-  }
+.main .section-1 .section-1-box .section-1-box-bottom {
+  width: 50%;
 }
 
-.tbody-2 .tbody-2-box .tbody-2-blok-2 {
+.main .section-1 .section-1-box .section-1-box-bottom .section-1-box-position {
   position: relative;
   width: 70%;
-  margin: 0 auto;
-  height: 550px;
+  height: 100%;
 }
 
-.tbody-2 .tbody-2-box .tbody-2-blok-2 img {
-  width: 90%;
-}
-
-.tbody-2 .tbody-2-box .tbody-2-blok-2 .tbody-2-position-1 {
+.main .section-1 .section-1-box .section-1-box-bottom .section-1-box-position .section-1-box-img {
   position: absolute;
-  left: 5%;
-  top: -30%;
-}
-
-.tbody-2 .tbody-2-box .tbody-2-blok-2 .tbody-2-position-2 {
-  position: absolute;
-  top: 65%;
-  left: 26%;
-  width: 50%;
-}
-
-@media (max-width: 992px) {
-  .tbody-2 .tbody-2-box .tbody-2-blok-2 {
-    height: 450px;
-  }
-  .tbody-2 .tbody-2-box .tbody-2-blok-2 .tbody-2-position-2 {
-    top: 70%;
-  }
-}
-
-@media (max-width: 768px) {
-  .tbody-2 .tbody-2-box .tbody-2-blok-2 {
-    height: 300px;
-  }
-  .tbody-2 .tbody-2-box .tbody-2-blok-2 .tbody-2-position-1 {
-    top: -40% !important;
-  }
-  .tbody-2 .tbody-2-box .tbody-2-blok-2 .tbody-2-position-2 {
-    top: 60% !important;
-  }
-}
-
-@media (max-width: 576px) {
-  .tbody-2 .tbody-2-box .tbody-2-blok-2 {
-    height: 200px;
-  }
-  .tbody-2 .tbody-2-box .tbody-2-blok-2 .tbody-2-position-1 {
-    top: -66% !important;
-  }
-  .tbody-2 .tbody-2-box .tbody-2-blok-2 .tbody-2-position-2 {
-    top: 40% !important;
-  }
-}
-
-@media (max-width: 400px) {
-  .tbody-2 .tbody-2-box .tbody-2-blok-2 .tbody-2-position-2 {
-    top: 10% !important;
-  }
-}
-
-@media (max-width: 1250px) {
-  .tbody-2 .tbody-2-box .tbody-2-blok-2 .tbody-2-position-2 {
-    top: 45%;
-  }
-}
-
-@media (max-width: 992px) {
-  .tbody-2 .tbody-2-box {
-    -ms-flex-wrap: wrap;
-        flex-wrap: wrap;
-  }
-}
-
-.tbody-3-box {
-  text-align: center;
-}
-
-.tbody-3-box h1 {
-  padding-top: 135px;
-  font-size: 44px;
-  font-family: 'Hind Madurai',sans-serif;
-  line-height: 61px;
-  padding-bottom: 60px;
-  text-align: center;
-}
-
-@media (max-width: 576px) {
-  .tbody-3-box h1 {
-    font-size: 30px;
-    padding-top: 50px;
-    padding-bottom: 30px;
-  }
-}
-
-@media (max-width: 992px) {
-  .tbody-3-box ul {
-    overflow-x: scroll !important;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -ms-flex-wrap: nowrap;
-        flex-wrap: nowrap;
-    white-space: nowrap;
-  }
-}
-
-@media (max-width: 1250px) {
-  .tbody-3-box ul {
-    overflow-x: scroll !important;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -ms-flex-wrap: nowrap;
-        flex-wrap: nowrap;
-    white-space: nowrap;
-  }
-}
-
-.tbody-3-box ul li {
-  display: inline-block;
-  list-style-type: none;
-  padding-left: 40px;
-  padding-bottom: 4px;
-}
-
-.tbody-3-box ul li a {
-  text-decoration: none;
-  color: #000000;
-  opacity: 0.6;
-  font-family: 'Roboto',sans-serif;
-}
-
-.tbody-3-box ul li a:hover {
-  color: black;
-  border-bottom: 3px solid #D64374;
-  opacity: 1;
-}
-
-.tbody-4, .tbody-6 {
-  padding-top: 50px;
-}
-
-.tbody-4 .tbody-4-box, .tbody-6 .tbody-4-box {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-}
-
-.tbody-4 .tbody-4-box .tbody-4-blok-1, .tbody-6 .tbody-4-box .tbody-4-blok-1 {
-  width: 40%;
-}
-
-.tbody-4 .tbody-4-box .tbody-4-blok-1 img, .tbody-6 .tbody-4-box .tbody-4-blok-1 img {
-  width: 120%;
-}
-
-@media (max-width: 992px) {
-  .tbody-4 .tbody-4-box .tbody-4-blok-1 img, .tbody-6 .tbody-4-box .tbody-4-blok-1 img {
-    width: 90%;
-    margin-left: 15%;
-  }
-}
-
-@media (max-width: 992px) {
-  .tbody-4 .tbody-4-box .tbody-4-blok-1, .tbody-6 .tbody-4-box .tbody-4-blok-1 {
-    width: 80%;
-  }
-}
-
-.tbody-4 .tbody-4-box .tbody-4-blok-2, .tbody-6 .tbody-4-box .tbody-4-blok-2 {
-  width: 40%;
-  padding-top: 30px;
-  font-family: 'Roboto', sans-serif;
-}
-
-.tbody-4 .tbody-4-box .tbody-4-blok-2 h2, .tbody-6 .tbody-4-box .tbody-4-blok-2 h2 {
-  font-size: 26px;
-  font-family: 'Hind Madurai',sans-serif;
-}
-
-.tbody-4 .tbody-4-box .tbody-4-blok-2 p, .tbody-6 .tbody-4-box .tbody-4-blok-2 p {
-  line-height: 24px;
-  color: black;
-  opacity: 0.6;
-  padding-top: 10px;
-  padding-bottom: 30px;
-}
-
-.tbody-4 .tbody-4-box .tbody-4-blok-2 .tbody-4-blog, .tbody-6 .tbody-4-box .tbody-4-blok-2 .tbody-4-blog {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-}
-
-.tbody-4 .tbody-4-box .tbody-4-blok-2 .tbody-4-blog .tbody-4-blog-right, .tbody-6 .tbody-4-box .tbody-4-blok-2 .tbody-4-blog .tbody-4-blog-right {
-  margin-bottom: -5px;
-  font-size: 20px;
-  padding-left: 5px;
-  color: #000;
-  opacity: 0.6;
-}
-
-.tbody-4 .tbody-4-box .tbody-4-blok-2 button, .tbody-6 .tbody-4-box .tbody-4-blok-2 button {
-  color: #fff;
-  padding: 15px 50px;
-  background-color: #D23166;
-  border-radius: 5px;
-  border: none;
-  font-family: 'Hind Madurai';
-  margin-top: 15px;
-  font-family: 'Roboto', sans-serif;
-}
-
-.tbody-4 .tbody-4-box .tbody-4-blok-2 button:hover, .tbody-6 .tbody-4-box .tbody-4-blok-2 button:hover {
-  cursor: pointer;
-  background-color: yellow;
-}
-
-@media (max-width: 992px) {
-  .tbody-4 .tbody-4-box .tbody-4-blok-2, .tbody-6 .tbody-4-box .tbody-4-blok-2 {
-    width: 80%;
-    margin: 0 auto;
-  }
-}
-
-@media (max-width: 992px) {
-  .tbody-4 .tbody-4-box, .tbody-6 .tbody-4-box {
-    -ms-flex-wrap: wrap !important;
-        flex-wrap: wrap !important;
-  }
-}
-
-.tbody-5 {
-  margin-top: 30px;
-}
-
-.tbody-5 .tbody-5-box {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-}
-
-.tbody-5 .tbody-5-box .tbody-5-blok-1 {
-  width: 40%;
-  font-family: 'Roboto',sans-serif;
-  text-align: right;
-  padding-top: 50px;
-}
-
-.tbody-5 .tbody-5-box .tbody-5-blok-1 h2 {
-  font-size: 26px;
-}
-
-.tbody-5 .tbody-5-box .tbody-5-blok-1 p {
-  line-height: 24px;
-  color: black;
-  opacity: 0.6;
-  padding-top: 10px;
-  padding-bottom: 30px;
-}
-
-.tbody-5 .tbody-5-box .tbody-5-blok-1 .tbody-4-blog {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: end;
-      -ms-flex-pack: end;
-          justify-content: flex-end;
-}
-
-.tbody-5 .tbody-5-box .tbody-5-blok-1 .tbody-4-blog .tbody-4-blog-right {
-  margin-bottom: -5px;
-  font-size: 20px;
-  padding-left: 5px;
-  color: #000;
-  opacity: 0.6;
-}
-
-.tbody-5 .tbody-5-box .tbody-5-blok-1 .btn-1 {
-  color: #fff;
-  padding: 15px 50px;
-  background-color: #D23166;
-  border-radius: 5px;
-  border: none;
-  font-family: 'Hind Madurai';
-  margin-top: 10px;
-}
-
-.tbody-5 .tbody-5-box .tbody-5-blok-1 .btn-1:hover {
-  cursor: pointer;
-  background-color: yellow;
-}
-
-@media (max-width: 992px) {
-  .tbody-5 .tbody-5-box .tbody-5-blok-1 {
-    width: 80%;
-    margin: 0 auto;
-  }
-}
-
-.tbody-5 .tbody-5-box .tbody-4-blok-2 {
-  width: 40%;
-}
-
-.tbody-5 .tbody-5-box .tbody-4-blok-2 img {
   width: 100%;
+  left: 20%;
 }
 
-@media (max-width: 992px) {
-  .tbody-5 .tbody-5-box .tbody-4-blok-2 img {
-    width: 80%;
-    margin-left: 10%;
+.main .section-1 .section-1-box .section-1-box-bottom .section-1-box-position .my-position-1 {
+  top: 2rem;
+  left: 0%;
+  width: 54rem;
+}
+
+.main .section-1 .section-1-box .section-1-box-bottom .section-1-box-position .my-position-2 {
+  left: -16rem;
+  bottom: -2rem;
+  width: 80rem;
+}
+
+@media (max-width: 1200px) {
+  .main .section-1 .section-1-box .section-1-box-bottom .section-1-box-position .my-position-2 {
+    bottom: -4rem;
   }
 }
 
-@media (max-width: 992px) {
-  .tbody-5 .tbody-5-box .tbody-4-blok-2 {
-    width: 80%;
-    margin: 0 auto;
+.main .section-1 .section-1-box .section-1-box-bottom .section-1-box-position .my-position-3 {
+  top: 35rem;
+  left: 10rem;
+  width: 32rem;
+}
+
+@media (max-width: 1300px) {
+  .main .section-1 .section-1-box .section-1-box-bottom .section-1-box-position {
+    display: none;
   }
 }
 
-@media (max-width: 992px) {
-  .tbody-5 .tbody-5-box {
-    -ms-flex-wrap: wrap;
-        flex-wrap: wrap;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: reverse;
-        -ms-flex-direction: column-reverse;
-            flex-direction: column-reverse;
-  }
-}
-
-@media (max-width: 992px) {
-  .tbody-6 .tbody-4-blok-1 img {
-    width: 80% !important;
-    margin-left: 20% !important;
-  }
-}
-
-.tbody-6 .tbody-4-blok-1 .tbody-4-blok-2 {
-  margin-top: 55px;
-}
-
-.tbody-7 {
-  padding-bottom: 140px;
-  padding-top: 170px;
-}
-
-@media (max-width: 992px) {
-  .tbody-7 {
-    padding-top: 80px;
-  }
-}
-
-.tbody-7-box {
+.main .section-1 .section-1-box .section-1-box-bottom .section-1-box-position-img {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  font-family: 'Roboto',sans-serif;
-}
-
-.tbody-7-box .tbody-7-box-blok-1 {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  width: 35%;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-}
-
-@media (max-width: 992px) {
-  .tbody-7-box .tbody-7-box-blok-1 {
-    width: 100%;
-    margin: 0 auto;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
-  }
-}
-
-@media (max-width: 992px) {
-  .tbody-7-box .tbody-7-box-blok-2 img {
-    width: 70% !important;
-    margin-left: 10%;
-    margin-bottom: 80px;
-  }
-}
-
-@media (max-width: 1250px) {
-  .tbody-7-box .tbody-7-box-blok-2 img {
-    width: 80%;
-    margin-left: 12%;
-  }
-}
-
-.tbody-7-box .tbody-7-box-blog-1 {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-}
-
-.tbody-7-box .tbody-7-box-blog-1 .tbody-7-box-blog-1-left {
-  margin-right: 20px;
-}
-
-@media (max-width: 992px) {
-  .tbody-7-box .tbody-7-box-blog-1 .tbody-7-box-blog-1-left {
-    margin-bottom: 15px;
-  }
-}
-
-.tbody-7-box .tbody-7-box-blog-2 {
-  position: relative;
-}
-
-.tbody-7-box .tbody-7-box-blog-2 p {
-  width: 90%;
-  margin: 0 auto;
-}
-
-.tbody-7-box .tbody-7-box-blog-2 .tbody-7-symbol-1 {
-  position: absolute;
-  top: 5px;
-  left: -5px;
-}
-
-.tbody-7-box .tbody-7-box-blog-2 .tbody-7-symbol-2 {
-  position: absolute;
-  bottom: 0px;
-  right: 20%;
-}
-
-.tbody-7-box .tbody-7-box-blog-3 {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-}
-
-.tbody-7-box .tbody-7-box-blog-3 .tbody-7-comment-1 {
-  margin: 0 20px;
-}
-
-.tbody-7-box .tbody-7-box-blog-3 .tbody-7-comment-2 {
-  margin-right: 20px;
-}
-
-.tbody-7-box .tbody-7-box-blog-3 .tbody-7-comment-3 {
-  margin-right: 20px;
-}
-
-.tbody-7-box .tbody-7-box-blog-3 i {
-  color: #D64374;
-}
-
-@media (max-width: 992px) {
-  .tbody-7-box .tbody-7-box-blog-3 {
-    margin-top: 15px;
-  }
-}
-
-@media (max-width: 992px) {
-  .tbody-7-box {
-    -ms-flex-wrap: wrap;
-        flex-wrap: wrap;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: reverse;
-        -ms-flex-direction: column-reverse;
-            flex-direction: column-reverse;
-  }
-}
-
-.tbody-8 {
-  background-color: #F8EDF0;
-  font-family: 'Roboto',sans-serif;
-}
-
-.tbody-8 .tbody-8-box {
-  position: relative;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-}
-
-.tbody-8 .tbody-8-box .tbody-8-blok-1 {
-  position: relative;
-  width: 350px;
-  height: 650px;
-}
-
-.tbody-8 .tbody-8-box .tbody-8-blok-1 img {
-  position: absolute;
-  top: 10%;
-  left: -1%;
-}
-
-@media (max-width: 992px) {
-  .tbody-8 .tbody-8-box .tbody-8-blok-1 {
-    width: 100%;
-    height: 850px;
-  }
-  .tbody-8 .tbody-8-box .tbody-8-blok-1 img {
-    width: 50%;
-    margin-left: 25%;
-  }
-}
-
-@media (max-width: 768px) {
-  .tbody-8 .tbody-8-box .tbody-8-blok-1 {
-    width: 100%;
-    height: 650px;
-  }
-  .tbody-8 .tbody-8-box .tbody-8-blok-1 img {
-    width: 50%;
-    margin-left: 25%;
-  }
-}
-
-@media (max-width: 576px) {
-  .tbody-8 .tbody-8-box .tbody-8-blok-1 {
-    width: 100%;
-    height: 470px;
-  }
-  .tbody-8 .tbody-8-box .tbody-8-blok-1 img {
-    width: 50%;
-    margin-left: 25%;
-  }
-}
-
-@media (max-width: 400px) {
-  .tbody-8 .tbody-8-box .tbody-8-blok-1 {
-    width: 100%;
-    height: 320px;
-  }
-  .tbody-8 .tbody-8-box .tbody-8-blok-1 img {
-    width: 50%;
-    margin-left: 25%;
-  }
-}
-
-.tbody-8 .tbody-8-box .tbody-8-blok-2 {
-  width: 50%;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  padding-bottom: 140px;
-}
-
-.tbody-8 .tbody-8-box .tbody-8-blok-2 h1 {
-  margin-top: 90px;
-  margin-bottom: 20px;
-}
-
-.tbody-8 .tbody-8-box .tbody-8-blok-2 p {
-  color: #0F0101;
-  opacity: 0.7;
-}
-
-.tbody-8 .tbody-8-box .tbody-8-blok-2 .tbody-8-blog-1 {
-  margin-top: 10px;
-  margin-bottom: 40px;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-}
-
-.tbody-8 .tbody-8-box .tbody-8-blok-2 .tbody-8-blog-1 .tbody-8-blog-blok-1 {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  margin-top: 20px;
-}
-
-.tbody-8 .tbody-8-box .tbody-8-blok-2 .tbody-8-blog-1 .tbody-8-blog-blok-1 div {
-  width: 30px;
-  height: 30px;
-  background-color: #fff;
-  border-radius: 3px;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-}
-
-.tbody-8 .tbody-8-box .tbody-8-blok-2 .tbody-8-blog-1 .tbody-8-blog-blok-1 h6 {
-  padding-left: 10px;
-  font-weight: 400;
-}
-
-.tbody-8 .tbody-8-box .tbody-8-blok-2 .tbody-8-blog-box-1 {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  width: 100%;
+  margin-top: 4rem;
 }
 
-.tbody-8 .tbody-8-box .tbody-8-blok-2 .tbody-8-blog-box-1 img {
-  padding-right: 10px;
+.main .section-1 .section-1-box .section-1-box-bottom .section-1-box-position-img img {
+  width: 150%;
 }
 
-@media (max-width: 400px) {
-  .tbody-8 .tbody-8-box .tbody-8-blok-2 .tbody-8-blog-box-1 {
-    -ms-flex-wrap: wrap;
-        flex-wrap: wrap;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
+@media (max-width: 750px) {
+  .main .section-1 .section-1-box .section-1-box-bottom .section-1-box-position-img img {
+    width: 100%;
+  }
+}
+
+@media (min-width: 1300px) {
+  .main .section-1 .section-1-box .section-1-box-bottom .section-1-box-position-img {
+    display: none;
+  }
+}
+
+@media (max-width: 750px) {
+  .main .section-1 .section-1-box .section-1-box-bottom {
+    width: 100%;
+  }
+}
+
+@media (max-width: 700px) {
+  .main .section-1 .section-1-box {
     -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
-  }
-  .tbody-8 .tbody-8-box .tbody-8-blok-2 .tbody-8-blog-box-1 img {
-    padding: 0;
-  }
-}
-
-@media (max-width: 992px) {
-  .tbody-8 .tbody-8-box .tbody-8-blok-2 {
-    width: 100%;
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
-  }
-}
-
-@media (max-width: 992px) {
-  .tbody-8 .tbody-8-box {
-    -ms-flex-wrap: wrap;
-        flex-wrap: wrap;
-  }
-}
-
-.tbody-9 {
-  padding-top: 190px;
-  font-family: 'Roboto', sans-serif;
-}
-
-.tbody-9 .tbody-9-box {
-  width: 70%;
-  margin: 0 auto;
-}
-
-.tbody-9 .tbody-9-box h1 {
-  font-size: 44px;
-  font-weight: 500;
-  padding: 0 40px;
-  width: 80%;
-  margin: 0 auto;
-}
-
-@media (max-width: 992px) {
-  .tbody-9 .tbody-9-box h1 {
-    font-size: 30px;
+    -webkit-box-direction: reverse;
+        -ms-flex-direction: column-reverse;
+            flex-direction: column-reverse;
     width: 100%;
   }
 }
 
-@media (max-width: 400px) {
-  .tbody-9 .tbody-9-box h1 {
-    font-size: 20px;
-    width: 100% !important;
-    margin: 0;
-    padding: 0;
-  }
+.main .section-2 {
+  background-color: #fff;
+  margin-top: 4rem;
 }
 
-.tbody-9 .tbody-9-box .tbody-9-blok {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  padding-top: 35px;
-  padding-bottom: 140px;
-}
-
-.tbody-9 .tbody-9-box .tbody-9-blok input {
-  background-color: #FAFAFA;
-  width: 70%;
-  padding: 25px;
-  border-radius: 5px;
-  border: transparent;
-}
-
-.tbody-9 .tbody-9-box .tbody-9-blok input:focus {
-  outline: transparent;
-}
-
-@media (max-width: 576px) {
-  .tbody-9 .tbody-9-box .tbody-9-blok input {
-    padding: 15px 25px;
-  }
-}
-
-@media (max-width: 400px) {
-  .tbody-9 .tbody-9-box .tbody-9-blok input {
-    padding: 11px 25px 11px 5px;
-    font-size: 10px;
-  }
-}
-
-.tbody-9 .tbody-9-box .tbody-9-blok button {
-  padding: 25px 45px;
-  background-color: #D64374;
-  border: transparent;
-  border-radius: 5px;
-  color: white;
-}
-
-.tbody-9 .tbody-9-box .tbody-9-blok button:hover {
-  background-color: yellow;
-  cursor: pointer;
-}
-
-@media (max-width: 576px) {
-  .tbody-9 .tbody-9-box .tbody-9-blok button {
-    padding: 10px 25px;
-    font-size: 12px;
-  }
-}
-
-@media (max-width: 992px) {
-  .tbody-9 {
-    padding-top: 100px;
-  }
-}
-
-.footer {
-  background-color: #0A0808;
-  font-family: sans-serif;
-  color: white;
-  font-size: 12px;
-}
-
-.footer .footer-box {
-  padding-top: 70px;
-}
-
-.footer ul li {
-  list-style-type: none;
-  padding-bottom: 10px;
-}
-
-.footer ul li a {
-  text-decoration: none;
-  color: #fff;
-  opacity: 0.7;
-}
-
-.footer ul li a:hover {
-  cursor: pointer;
-  opacity: 1;
-}
-
-.footer .footer-blok {
+.main .section-2 .section-2-box {
+  width: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  font-weight: 100;
-  font-style: normal;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  padding-bottom: 5rem;
 }
 
-.footer .footer-blok .footer-blog-1 {
+.main .section-2 .section-2-box .section-2-blok {
+  width: 22%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  padding-bottom: 110px;
-  width: 30%;
+  min-width: 20rem;
+  margin-top: 10rem;
+  border: 1px solid #00000008;
 }
 
-.footer .footer-blok .footer-blog-1 p {
-  color: #fff;
+.main .section-2 .section-2-box .section-2-blok img {
+  margin-bottom: 2rem;
+  margin-top: 3rem;
+}
+
+.main .section-2 .section-2-box .section-2-blok h3 {
+  font-family: "Hind Madurai";
+  font-size: 2rem;
+  font-weight: 600;
+  line-height: 2.8rem;
+  text-align: center;
+}
+
+.main .section-2 .section-2-box .section-2-blok p {
+  font-family: "Hind Madurai";
+  font-size: 1.4rem;
   font-weight: 400;
-  font-style: normal;
-  opacity: 0.7;
+  line-height: 1.9rem;
+  text-align: center;
+  margin-top: 1rem;
   width: 80%;
-  padding-top: 9px;
-  padding-bottom: 25px;
+  margin-bottom: 3rem;
+  opacity: 0.6;
 }
 
-.footer .footer-blok .footer-blog-1 a img {
-  padding-right: 10px;
-  padding-top: 8px;
-}
-
-@media (max-width: 992px) {
-  .footer .footer-blok .footer-blog-1 {
-    width: 30%;
+@media (max-width: 800px) {
+  .main .section-2 .section-2-box .section-2-blok {
+    width: 45%;
   }
 }
 
 @media (max-width: 400px) {
-  .footer .footer-blok .footer-blog-1 {
-    width: 50%;
-    padding-bottom: 20px;
+  .main .section-2 .section-2-box .section-2-blok {
+    width: 70%;
   }
 }
 
-.footer .footer-blok .footer-blog-2 {
+@media (max-width: 400px) {
+  .main .section-2 .section-2-box {
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+}
+
+.main .section-3 .section-3-box {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.main .section-3 .section-3-box .section-3-blok-1 {
+  width: 50%;
+  margin-top: 14rem;
+}
+
+.main .section-3 .section-3-box .section-3-blok-1 h1 {
+  font-family: "Hind Madurai";
+  font-size: 4.4rem;
+  font-weight: 600;
+  line-height: 4.9rem;
+  letter-spacing: 0em;
+  margin-top: 3rem;
+  width: 70%;
+}
+
+@media (max-width: 750px) {
+  .main .section-3 .section-3-box .section-3-blok-1 h1 {
+    width: 100%;
+  }
+}
+
+.main .section-3 .section-3-box .section-3-blok-1 p {
+  font-family: "Roboto";
+  font-size: 1.6rem;
+  font-weight: 400;
+  line-height: 2.4rem;
+  letter-spacing: 0em;
+  margin-top: 1.6rem;
+  margin-bottom: 3rem;
+  opacity: 0.6;
+}
+
+.main .section-3 .section-3-box .section-3-blok-1 .btn {
+  padding: 1.4rem 5rem;
+  font-family: 'Hind Madurai';
+  font-size: 1.6rem;
+  font-weight: 700;
+  line-height: 2.2rem;
+  letter-spacing: 0em;
+  background-color: #D23166;
+  color: #fff;
+  border-radius: 0.5rem;
+  border: none;
+  cursor: pointer;
+  font-family: Roboto;
+  font-size: 1.6rem;
+  font-weight: 500;
+  line-height: 1.9rem;
+  letter-spacing: 0em;
+  text-align: left;
+  margin-bottom: 10rem;
+}
+
+.main .section-3 .section-3-box .section-3-blok-1 .btn:hover {
+  background-color: yellow;
+}
+
+@media (max-width: 850px) {
+  .main .section-3 .section-3-box .section-3-blok-1 {
+    width: 100%;
+    min-width: 42.5rem;
+  }
+}
+
+.main .section-3 .section-3-box .section-3-blok-2 {
+  width: 50%;
+  position: relative;
+}
+
+.main .section-3 .section-3-box .section-3-blok-2 .section-3-position {
+  position: absolute;
+  width: 100%;
+}
+
+.main .section-3 .section-3-box .section-3-blok-2 .section-3-img-1 {
+  top: 0rem;
+}
+
+.main .section-3 .section-3-box .section-3-blok-2 .section-3-img-2 {
+  top: 41rem;
+  left: 20%;
+  width: 60%;
+}
+
+@media (max-width: 1000px) {
+  .main .section-3 .section-3-box .section-3-blok-2 .section-3-img-2 {
+    top: 30rem;
+  }
+}
+
+@media (max-width: 850px) {
+  .main .section-3 .section-3-box .section-3-blok-2 .section-3-img-2 {
+    top: 50rem;
+  }
+}
+
+@media (max-width: 700px) {
+  .main .section-3 .section-3-box .section-3-blok-2 .section-3-img-2 {
+    top: 60rem;
+  }
+}
+
+@media (max-width: 580px) {
+  .main .section-3 .section-3-box .section-3-blok-2 .section-3-img-2 {
+    top: 50rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .main .section-3 .section-3-box .section-3-blok-2 .section-3-img-2 {
+    top: 40rem;
+  }
+}
+
+@media (max-width: 850px) {
+  .main .section-3 .section-3-box .section-3-blok-2 {
+    width: 100%;
+    min-width: 42.5rem;
+    height: 60rem;
+  }
+}
+
+@media (max-width: 850px) {
+  .main .section-3 .section-3-box {
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: reverse;
+        -ms-flex-direction: column-reverse;
+            flex-direction: column-reverse;
+  }
+}
+
+.main .section-4 {
+  background-color: #fff;
+}
+
+.main .section-4 .section-4-box {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1329,135 +609,907 @@ body {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  width: 20%;
-}
-
-@media (max-width: 992px) {
-  .footer .footer-blok .footer-blog-2 {
-    width: 30%;
-  }
-}
-
-@media (max-width: 400px) {
-  .footer .footer-blok .footer-blog-2 {
-    width: 50%;
-  }
-}
-
-.footer .footer-blok .footer-blog-3 {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  width: 20%;
-}
-
-@media (max-width: 992px) {
-  .footer .footer-blok .footer-blog-3 {
-    width: 30%;
-  }
-}
-
-.footer .footer-blok .footer-blog-4 {
-  width: 45%;
-}
-
-.footer .footer-blok .footer-blog-4 h4 {
-  padding-bottom: 15px;
-}
-
-.footer .footer-blok .footer-blog-4 input {
-  padding: 20px;
-  border: 2px solid #D64374;
-  background-color: transparent;
-  border-top-left-radius: 5px;
-  border-bottom-left-radius: 5px;
-  color: white;
-}
-
-.footer .footer-blok .footer-blog-4 input:focus {
-  outline: #D64374;
-}
-
-@media (max-width: 992px) {
-  .footer .footer-blok .footer-blog-4 input {
-    width: 80%;
-  }
-}
-
-@media (max-width: 400px) {
-  .footer .footer-blok .footer-blog-4 input {
-    width: 80%;
-    padding: 10px;
-    font-size: 12px;
-  }
-}
-
-.footer .footer-blok .footer-blog-4 .footer-content {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-}
-
-.footer .footer-blok .footer-blog-4 .footer-content button {
-  padding: 16px 18px;
-  border: 2px solid #D64374;
-  background-color: #D64374;
-  border-top-right-radius: 5px;
-  border-bottom-right-radius: 5px;
-}
-
-@media (max-width: 992px) {
-  .footer .footer-blok .footer-blog-4 {
-    width: 100%;
-  }
-}
-
-@media (max-width: 400px) {
-  .footer .footer-blok .footer-blog-4 {
-    width: 100%;
-    padding: 12px;
-  }
-}
-
-.footer .footer-blok .footer-blog-4-content {
-  margin-top: 15px;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: start;
-      -ms-flex-pack: start;
-          justify-content: flex-start;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
 }
 
-.footer .footer-blok .footer-blog-4-content img {
-  padding-right: 20px;
+.main .section-4 .section-4-box h1 {
+  padding-top: 14rem;
+  font-family: "Hind Madurai";
+  font-size: 4.4rem;
+  font-weight: 600;
+  line-height: 6rem;
+  letter-spacing: 0em;
+  text-align: center;
+  margin-bottom: 6rem;
 }
 
-@media (max-width: 992px) {
-  .footer .footer-blok .footer-blog-4-content {
-    padding-bottom: 50px;
+.main .section-4 .section-4-box ul {
+  overflow-x: scroll !important;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+}
+
+@media (max-width: 1000px) {
+  .main .section-4 .section-4-box ul {
+    width: 100%;
   }
 }
 
-@media (max-width: 992px) {
-  .footer .footer-blok {
+.main .section-4 .section-4-box ul li {
+  list-style-type: none;
+  display: inline-block;
+  font-family: "Roboto";
+  font-size: 1.8rem;
+  font-weight: 500;
+  line-height: 2rem;
+  margin-right: 4rem;
+  white-space: nowrap;
+  opacity: 0.6;
+  border: 2px solid transparent;
+  padding-bottom: 0.2rem;
+  margin-bottom: 0.2rem;
+}
+
+.main .section-4 .section-4-box ul li:hover {
+  opacity: 1;
+  border-bottom: 2px solid #d64374;
+}
+
+.main .section-5 {
+  background-color: #fff;
+  padding-bottom: 3rem;
+}
+
+.main .section-5 .section-5-box {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.main .section-5 .section-5-box .section-5-box-blok-1 {
+  width: 50%;
+}
+
+.main .section-5 .section-5-box .section-5-box-blok-1 img {
+  width: 100%;
+}
+
+@media (max-width: 700px) {
+  .main .section-5 .section-5-box .section-5-box-blok-1 {
+    min-width: 40rem;
+    width: 80%;
+  }
+}
+
+.main .section-5 .section-5-box .section-5-box-blok-2 {
+  width: 45%;
+}
+
+.main .section-5 .section-5-box .section-5-box-blok-2 h1 {
+  font-family: Hind Madurai;
+  font-size: 2.6rem;
+  font-weight: 700;
+  line-height: 3.6rem;
+  letter-spacing: 0em;
+  text-align: left;
+  margin-top: 5rem;
+}
+
+.main .section-5 .section-5-box .section-5-box-blok-2 p {
+  font-family: Roboto;
+  font-size: 1.6rem;
+  font-weight: 400;
+  line-height: 2.4rem;
+  letter-spacing: 0em;
+  text-align: left;
+  opacity: 0.7;
+  margin-top: 1rem;
+  margin-bottom: 3rem;
+}
+
+.main .section-5 .section-5-box .section-5-box-blok-2 div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: baseline;
+      -ms-flex-align: baseline;
+          align-items: baseline;
+  margin-bottom: 1.6rem;
+}
+
+.main .section-5 .section-5-box .section-5-box-blok-2 div h1 {
+  font-family: "Hind Madurai";
+  font-size: 2.6rem;
+  font-weight: 500;
+  line-height: 3.6rem;
+  letter-spacing: 0em;
+  text-align: left;
+  margin-right: 0.5rem;
+  margin-top: 0;
+}
+
+.main .section-5 .section-5-box .section-5-box-blok-2 div span {
+  font-family: Hind Madurai;
+  font-size: 2rem;
+  font-weight: 500;
+  line-height: 2.8rem;
+  letter-spacing: 0em;
+  text-align: left;
+  opacity: 0.7;
+}
+
+.main .section-5 .section-5-box .section-5-box-blok-2 .btn {
+  padding: 1.4rem 5rem;
+  font-family: 'Hind Madurai';
+  font-size: 1.6rem;
+  font-weight: 700;
+  line-height: 2.2rem;
+  letter-spacing: 0em;
+  background-color: #D23166;
+  color: #fff;
+  border-radius: 0.5rem;
+  border: none;
+  cursor: pointer;
+}
+
+.main .section-5 .section-5-box .section-5-box-blok-2 .btn:hover {
+  background-color: yellow;
+}
+
+@media (max-width: 700px) {
+  .main .section-5 .section-5-box .section-5-box-blok-2 {
+    min-width: 30rem;
+    width: 100%;
+  }
+}
+
+@media (max-width: 700px) {
+  .main .section-5 .section-5-box {
     -ms-flex-wrap: wrap;
         flex-wrap: wrap;
+  }
+}
+
+.main .section-6 {
+  background-color: #fff;
+  padding-bottom: 3rem;
+}
+
+.main .section-6 .section-6-box {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.main .section-6 .section-6-box .section-6-box-blok-2 {
+  width: 45%;
+}
+
+.main .section-6 .section-6-box .section-6-box-blok-2 img {
+  width: 100%;
+}
+
+@media (max-width: 700px) {
+  .main .section-6 .section-6-box .section-6-box-blok-2 {
+    min-width: 35rem;
+    width: 70%;
+  }
+}
+
+.main .section-6 .section-6-box .section-6-box-blok-1 {
+  width: 50%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+}
+
+.main .section-6 .section-6-box .section-6-box-blok-1 h1 {
+  font-family: "Hind Madurai";
+  font-size: 2.6rem;
+  font-weight: 700;
+  line-height: 3.6rem;
+  letter-spacing: 0em;
+  text-align: left;
+  margin-top: 5rem;
+}
+
+.main .section-6 .section-6-box .section-6-box-blok-1 p {
+  font-family: Roboto;
+  font-size: 1.6rem;
+  font-weight: 400;
+  line-height: 2.4rem;
+  letter-spacing: 0em;
+  text-align: left;
+  opacity: 0.7;
+  margin-top: 1rem;
+  margin-bottom: 3rem;
+  text-align: right;
+}
+
+.main .section-6 .section-6-box .section-6-box-blok-1 div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: baseline;
+      -ms-flex-align: baseline;
+          align-items: baseline;
+  margin-bottom: 1.6rem;
+}
+
+.main .section-6 .section-6-box .section-6-box-blok-1 div h1 {
+  font-family: "Hind Madurai";
+  font-size: 2.6rem;
+  font-weight: 500;
+  line-height: 3.6rem;
+  letter-spacing: 0em;
+  text-align: left;
+  margin-right: 0.5rem;
+  margin-top: 0;
+}
+
+.main .section-6 .section-6-box .section-6-box-blok-1 div span {
+  font-family: Hind Madurai;
+  font-size: 2rem;
+  font-weight: 500;
+  line-height: 2.8rem;
+  letter-spacing: 0em;
+  text-align: left;
+  opacity: 0.7;
+}
+
+.main .section-6 .section-6-box .section-6-box-blok-1 .btn {
+  padding: 1.4rem 5rem;
+  font-family: 'Hind Madurai';
+  font-size: 1.6rem;
+  font-weight: 700;
+  line-height: 2.2rem;
+  letter-spacing: 0em;
+  background-color: #D23166;
+  color: #fff;
+  border-radius: 0.5rem;
+  border: none;
+  cursor: pointer;
+}
+
+.main .section-6 .section-6-box .section-6-box-blok-1 .btn:hover {
+  background-color: yellow;
+}
+
+@media (max-width: 700px) {
+  .main .section-6 .section-6-box .section-6-box-blok-1 {
+    min-width: 35rem;
+    width: 100%;
+  }
+}
+
+@media (max-width: 700px) {
+  .main .section-6 .section-6-box {
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: reverse;
+        -ms-flex-direction: column-reverse;
+            flex-direction: column-reverse;
+  }
+}
+
+.main .section-7 {
+  background-color: #fff;
+}
+
+.main .section-7 .section-7-box {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.main .section-7 .section-7-box .section-7-box-blok-1 {
+  width: 35%;
+  margin-bottom: 6rem;
+}
+
+.main .section-7 .section-7-box .section-7-box-blok-1 .section-7-blog {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-bottom: 5rem;
+}
+
+.main .section-7 .section-7-box .section-7-box-blok-1 .section-7-blog img {
+  margin-right: 2rem;
+  border-radius: 50%;
+}
+
+.main .section-7 .section-7-box .section-7-box-blok-1 .section-7-blog h1 {
+  font-family: Roboto;
+  font-size: 2.4rem;
+  font-weight: 500;
+  line-height: 2.8rem;
+  letter-spacing: 0em;
+  text-align: left;
+  margin-left: 1rem;
+}
+
+.main .section-7 .section-7-box .section-7-box-blok-1 .section-7-blog h2 {
+  font-family: Roboto;
+  font-size: 1.2rem;
+  font-weight: 500;
+  line-height: 1.4rem;
+  letter-spacing: 0em;
+  text-align: left;
+  opacity: 0.7;
+}
+
+.main .section-7 .section-7-box .section-7-box-blok-1 p {
+  font-family: Roboto;
+  font-size: 1.6rem;
+  font-weight: 400;
+  line-height: 2.4rem;
+  letter-spacing: 0em;
+  text-align: left;
+  opacity: 0.7;
+  padding-left: 2rem;
+  padding-right: 2rem;
+  display: inline;
+  position: relative;
+}
+
+.main .section-7 .section-7-box .section-7-box-blok-1 p .symbol-left {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.main .section-7 .section-7-box .section-7-box-blok-1 p .symbol-right {
+  position: absolute;
+  bottom: -1rem;
+  right: 0;
+}
+
+@media (max-width: 700px) {
+  .main .section-7 .section-7-box .section-7-box-blok-1 p {
+    padding-left: 3rem;
+    padding-right: 3rem;
+  }
+}
+
+.main .section-7 .section-7-box .section-7-box-blok-1 .section-7-comment {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-top: 4rem;
+  width: 80%;
+}
+
+.main .section-7 .section-7-box .section-7-box-blok-1 .section-7-comment .btn-comment {
+  background-color: transparent;
+  padding: 1rem;
+  border: 1px solid transparent;
+  cursor: pointer;
+}
+
+.main .section-7 .section-7-box .section-7-box-blok-1 .section-7-comment .btn-comment i {
+  font-size: 1.8rem;
+  color: #d64374;
+  opacity: 0.7;
+}
+
+.main .section-7 .section-7-box .section-7-box-blok-1 .section-7-comment .btn-comment i:hover {
+  opacity: 1;
+}
+
+.main .section-7 .section-7-box .section-7-box-blok-1 .section-7-comment .comment-img {
+  border-radius: 50%;
+  width: 36px;
+  height: 36px;
+}
+
+.main .section-7 .section-7-box .section-7-box-blok-1 .section-7-comment .comment-img-active {
+  width: 60px;
+  height: 60px;
+  border: 1px solid #d64374;
+}
+
+@media (max-width: 700px) {
+  .main .section-7 .section-7-box .section-7-box-blok-1 {
+    min-width: 35rem;
+    width: 100%;
+  }
+}
+
+.main .section-7 .section-7-box .section-7-box-blok-2 {
+  width: 50%;
+}
+
+.main .section-7 .section-7-box .section-7-box-blok-2 img {
+  width: 100%;
+}
+
+@media (max-width: 700px) {
+  .main .section-7 .section-7-box .section-7-box-blok-2 {
+    min-width: 35rem;
+    width: 70%;
+  }
+}
+
+@media (max-width: 700px) {
+  .main .section-7 .section-7-box {
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: reverse;
+        -ms-flex-direction: column-reverse;
+            flex-direction: column-reverse;
+  }
+}
+
+.main .section-8 {
+  height: 62rem;
+}
+
+.main .section-8 .section-8-box {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin-top: 8rem;
+}
+
+.main .section-8 .section-8-box .section-8-box-blok-1 img {
+  width: 100%;
+  margin-top: 4.4rem;
+  border-radius: 3rem;
+}
+
+@media (max-width: 700px) {
+  .main .section-8 .section-8-box .section-8-box-blok-1 {
+    min-width: 35rem;
+    width: 60%;
+  }
+}
+
+.main .section-8 .section-8-box .section-8-box-blok-2 {
+  width: 40%;
+  margin-left: 10%;
+  margin-bottom: 5rem;
+}
+
+.main .section-8 .section-8-box .section-8-box-blok-2 h1 {
+  font-family: Roboto;
+  font-size: 4.4rem;
+  font-weight: 500;
+  line-height: 52px;
+  letter-spacing: 0em;
+  text-align: left;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+
+.main .section-8 .section-8-box .section-8-box-blok-2 p {
+  font-family: Roboto;
+  font-size: 1.8rem;
+  font-weight: 400;
+  line-height: 21px;
+  letter-spacing: 0.01em;
+  text-align: left;
+  opacity: 0.7;
+  margin-bottom: 3rem;
+}
+
+.main .section-8 .section-8-box .section-8-box-blok-2 .section-8-blok-2-helper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin-bottom: 1.5rem;
+}
+
+.main .section-8 .section-8-box .section-8-box-blok-2 .section-8-blok-2-helper .section-8-blok-for-img {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: #fff;
+  margin-right: 1rem;
+  width: 30px;
+  height: 30px;
+}
+
+.main .section-8 .section-8-box .section-8-box-blok-2 .section-8-blok-2-helper h3 {
+  font-family: Roboto;
+  font-size: 2.2rem;
+  font-weight: 400;
+  line-height: 26px;
+  letter-spacing: 0em;
+  text-align: left;
+}
+
+.main .section-8 .section-8-box .section-8-box-blok-2 .stores {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-top: 4rem;
+}
+
+.main .section-8 .section-8-box .section-8-box-blok-2 .stores .logo-play-market {
+  width: 23rem;
+  height: 5rem;
+  margin-left: -2rem;
+}
+
+@media (max-width: 1090px) {
+  .main .section-8 .section-8-box .section-8-box-blok-2 .stores .logo-play-market {
+    margin-left: -1.3rem;
+    margin-bottom: 2rem;
+  }
+}
+
+.main .section-8 .section-8-box .section-8-box-blok-2 .stores .logo-app-store {
+  width: 20rem;
+  height: 5rem;
+}
+
+@media (max-width: 1090px) {
+  .main .section-8 .section-8-box .section-8-box-blok-2 .stores {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
+  }
+}
+
+@media (max-width: 700px) {
+  .main .section-8 .section-8-box .section-8-box-blok-2 {
+    min-width: 35rem;
+    width: 100%;
+  }
+}
+
+@media (max-width: 700px) {
+  .main .section-8 .section-8-box {
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+  }
+}
+
+@media (max-width: 700px) {
+  .main .section-8 {
+    height: 100%;
+  }
+}
+
+.main .section-9 {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 20rem;
+  background-color: #fff;
+  padding-bottom: 60rem;
+}
+
+.main .section-9 h1 {
+  padding-top: 19rem;
+  padding-bottom: 3rem;
+  font-family: Roboto;
+  font-size: 4.4rem;
+  font-weight: 500;
+  line-height: 5.2rem;
+  letter-spacing: 0em;
+  text-align: center;
+  width: 35%;
+}
+
+@media (max-width: 1000px) {
+  .main .section-9 h1 {
+    width: 65%;
+  }
+}
+
+.main .section-9 .section-9-blok {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  border: 1px solid #fafafa;
+  background-color: #fafafa;
+  border-radius: 0.5rem;
+  width: 40%;
+  height: 7.7rem;
+}
+
+.main .section-9 .section-9-blok input {
+  height: 7.5rem;
+  width: 100%;
+  background-color: transparent;
+  border: 1px solid transparent;
+  font-family: Roboto;
+  font-size: 1.4rem;
+  font-weight: 400;
+  letter-spacing: 0em;
+  text-align: left;
+  padding-left: 3rem;
+}
+
+.main .section-9 .section-9-blok input:focus {
+  outline: transparent;
+}
+
+.main .section-9 .section-9-blok .btn {
+  padding: 1.4rem 5rem;
+  font-family: 'Hind Madurai';
+  font-size: 1.6rem;
+  font-weight: 700;
+  line-height: 2.2rem;
+  letter-spacing: 0em;
+  background-color: #D23166;
+  color: #fff;
+  border-radius: 0.5rem;
+  border: none;
+  cursor: pointer;
+  padding: 2.8rem 4.4rem;
+}
+
+.main .section-9 .section-9-blok .btn:hover {
+  background-color: yellow;
+}
+
+@media (max-width: 700px) {
+  .main .section-9 .section-9-blok {
+    width: 55%;
+  }
+}
+
+.main .footer {
+  background-color: #0a0808;
+}
+
+.main .footer .footer-logo {
+  padding-top: 7rem;
+}
+
+.main .footer .footer-box {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  color: #fff;
+  padding-bottom: 10rem;
+}
+
+.main .footer .footer-box ul li {
+  list-style-type: none;
+  margin-bottom: 1rem;
+}
+
+.main .footer .footer-box a {
+  color: #fff;
+  font-family: Roboto;
+  font-size: 1.2rem;
+  font-weight: 400;
+  line-height: 1.4rem;
+  letter-spacing: 0em;
+  text-align: left;
+  opacity: 0.7;
+  text-decoration: none;
+}
+
+.main .footer .footer-box a:hover {
+  opacity: 1;
+}
+
+.main .footer .footer-box .footer-box-blok-1 {
+  width: 20%;
+  margin-bottom: 4rem;
+}
+
+.main .footer .footer-box .footer-box-blok-1 p {
+  font-family: Roboto;
+  font-size: 1.2rem;
+  font-weight: 400;
+  line-height: 1.7rem;
+  letter-spacing: 0.01em;
+  text-align: left;
+  opacity: 0.7;
+  margin-bottom: 2.5rem;
+  margin-top: 1rem;
+}
+
+.main .footer .footer-box .footer-box-blok-1 h5 {
+  font-family: Roboto;
+  font-size: 1.2rem;
+  font-weight: 500;
+  line-height: 1.4rem;
+  letter-spacing: 0em;
+  text-align: left;
+  margin-bottom: 1rem;
+}
+
+.main .footer .footer-box .footer-box-blok-1 .footer-box-blok-1-socials .footer-box-blok-1-social {
+  margin-right: 1rem;
+}
+
+@media (max-width: 900px) {
+  .main .footer .footer-box .footer-box-blok-1 {
+    min-width: 25rem;
+  }
+}
+
+.main .footer .footer-box .footer-box-blok-2 {
+  width: 15%;
+  margin-bottom: 4rem;
+}
+
+.main .footer .footer-box .footer-box-blok-3 {
+  width: 20%;
+  margin-bottom: 4rem;
+}
+
+@media (max-width: 500px) {
+  .main .footer .footer-box .footer-box-blok-3 {
+    min-width: 25rem;
   }
 }
 
 @media (max-width: 400px) {
-  .footer .footer-blok {
+  .main .footer .footer-box .footer-box-blok-3 {
+    min-width: 40rem;
+  }
+}
+
+.main .footer .footer-box .footer-box-blok-4 {
+  width: 35%;
+  margin-bottom: 4rem;
+}
+
+.main .footer .footer-box .footer-box-blok-4 h4 {
+  font-family: Roboto;
+  font-size: 1.6rem;
+  font-weight: 500;
+  line-height: 1.9rem;
+  letter-spacing: 0em;
+  text-align: left;
+  margin-bottom: 1.3rem;
+}
+
+.main .footer .footer-box .footer-box-blok-4 .footer-box-blok-4-Subscribe {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border: 2px solid #d643747e;
+  border-right: 2px solid transparent;
+  border-radius: 0.5rem;
+  height: 5.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.main .footer .footer-box .footer-box-blok-4 .footer-box-blok-4-Subscribe input {
+  background-color: transparent;
+  font-family: Roboto;
+  font-size: 1.4rem;
+  font-weight: 400;
+  line-height: 1.6rem;
+  letter-spacing: 0em;
+  text-align: left;
+  padding-left: 3rem;
+  border: 1px solid transparent;
+  color: #fff;
+}
+
+.main .footer .footer-box .footer-box-blok-4 .footer-box-blok-4-Subscribe input:focus {
+  outline: transparent;
+}
+
+.main .footer .footer-box .footer-box-blok-4 .footer-box-blok-4-Subscribe .btn {
+  padding: 1.4rem 5rem;
+  font-family: 'Hind Madurai';
+  font-size: 1.6rem;
+  font-weight: 700;
+  line-height: 2.2rem;
+  letter-spacing: 0em;
+  background-color: #D23166;
+  color: #fff;
+  border-radius: 0.5rem;
+  border: none;
+  cursor: pointer;
+  font-family: Roboto;
+  font-size: 2rem;
+  font-weight: 500;
+  line-height: 2.3rem;
+  letter-spacing: 0em;
+  text-align: left;
+  padding: 1.6rem 1.8rem;
+  height: 5.6rem;
+}
+
+.main .footer .footer-box .footer-box-blok-4 .footer-box-blok-4-Subscribe .btn:hover {
+  background-color: yellow;
+}
+
+.main .footer .footer-box .footer-box-blok-4 .footer-box-blok-4-socials a {
+  margin-right: 1rem;
+}
+
+@media (max-width: 900px) {
+  .main .footer .footer-box .footer-box-blok-4 {
+    min-width: 40rem;
+  }
+}
+
+@media (max-width: 900px) {
+  .main .footer .footer-box {
     -ms-flex-wrap: wrap;
         flex-wrap: wrap;
-    text-align: center;
   }
 }
 /*# sourceMappingURL=style.css.map */

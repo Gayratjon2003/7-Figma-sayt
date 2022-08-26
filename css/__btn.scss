@@ -1,12 +1,16 @@
-@mixin  btn-1{
-    color: #fff;
-    padding: 15px 50px;
-    background-color: #D23166;
-    border-radius: 5px;
-    border: none;
+@mixin btn {
+    padding: 1.4rem 5rem;
     font-family: 'Hind Madurai';
+    font-size: 1.6rem;
+    font-weight: 700;
+    line-height: 2.2rem;
+    letter-spacing: 0em;
+    background-color: #D23166;
+    color: #fff;
+    border-radius: 0.5rem;
+    border: none;
+    cursor: pointer;
     &:hover {
-        cursor: pointer;
         background-color: yellow;
     }
 }
